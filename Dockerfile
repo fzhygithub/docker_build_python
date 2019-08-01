@@ -20,4 +20,4 @@ ENV NAME World
 CMD ["python", "app.py"]
 
 #docker run -d -p 4000:80 python:latest
-
+#curl http://localhost:4000
