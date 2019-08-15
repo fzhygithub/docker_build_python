@@ -1,3 +1,5 @@
+
+```
 …or create a new repository on the command line
 echo "# docker-build-python" >> README.md
 git init
@@ -42,3 +44,4 @@ CMD ["python", "app.py"]
 
 #docker run -d -p 4000:80 python:latest
 #curl http://localhost:4000
+```
