@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jenkins-python-demo
+  namespace: dev
+spec:
+  template:
+    metadata:
+      labels:
+        app: jenkins-python-demo
+    spec:
+      containers:
+      - image: fzhydocker/python:<BUILD_TAG>
+        imagePullPolicy: IfNotPresent
+        name: jenkins-python-demo
+        env:
+        - name: branch
+          value: <BRANCH_NAME>
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-python-demo
+  namespace: dev
+  labels:
+    app: jenkins-python-demo
+spec:
+  selector:
+    app: jenkins-python-demo
+  type: NodePort
+  ports:
+  - name: jenkins-python-demo
+    port: 8080
+    targetPort: 8080
