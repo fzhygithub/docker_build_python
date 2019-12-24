@@ -1,13 +1,13 @@
 #20191224##from flask import Flask
 #20191224##from redis import Redis, RedisError
+from flask import os
 import os
 import socket
 
 # Connect to Redis
 #20191224##redis = Redis(host="redis", db=0, socket_connect_timeout=2, socket_timeout=2)
 
-#20191224##app = Flask(__name__)
-app = os(__name__)
+app = Flask(__name__)
 
 @app.route("/")
 def hello():
