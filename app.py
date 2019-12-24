@@ -1,6 +1,6 @@
 #20191224##from flask import Flask
 #20191224##from redis import Redis, RedisError
-from flask import os
+from flask import Flask
 import os
 import socket
 
